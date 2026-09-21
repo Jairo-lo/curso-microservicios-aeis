@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* ---- Compilación / Salida ---- */
+    "target": "ES2022", // Versión de JavaScript de salida (soporta async/await moderno)
+    "module": "commonjs", // Formato de módulos que usa Node.js
+    "outDir": "./dist", // La compilación de TypeScript se guarda en la carpeta dist/
+    "rootDir": "./src", // Todo el código fuente vive dentro de src/
+
+    /* ---- Interoperabilidad de módulos ---- */
+    "esModuleInterop": true, // Permite importar módulos CommonJS con sintaxis import/export
+    "forceConsistentCasingInFileNames": true, // Evita errores por mayúsculas/minúsculas en imports
+
+    /* ---- Soporte para decoradores (necesario para TypeORM) ---- */
+    "experimentalDecorators": true, // Activa la sintaxis @Decorator usada por TypeORM
+    "emitDecoratorMetadata": true, // Genera los metadatos que TypeORM necesita en caliente
+
+    /* ---- Estrictez de TypeScript ---- */
+    "strict": true, // Activa todas las reglas estrictas de tipado
+    "strictPropertyInitialization": false, // Permite que TypeORM asigne las propiedades en la entidad
+    "skipLibCheck": true, // No revisa los tipos dentro de node_modules (más rápido)
+    "resolveJsonModule": true, // Permite importar archivos .json directamente
+    "sourceMap": true // Genera archivos .map para depurar en el navegador
+  },
+  "include": ["src/**/*.ts"], // Qué archivos compila
+  "exclude": ["node_modules", "dist"] // Qué archivos ignora
+}
