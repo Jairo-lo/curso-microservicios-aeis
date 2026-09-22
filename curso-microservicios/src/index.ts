@@ -1,11 +1,13 @@
 // Archivo principal que levanta el servidor 
 import express from 'express';
+import cors from 'cors'; // <-- 1. Importación obligatoria
 import productRoutes from './routes/product.routes';
 import { sequelize } from './config/database';
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors()); // <-- 2. Debe ejecutarse antes que el JSON y las rutas
 app.use(express.json());
 app.use('/api/products', productRoutes);
 

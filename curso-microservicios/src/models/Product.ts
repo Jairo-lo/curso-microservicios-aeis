@@ -1,13 +1,13 @@
-// Entidad de Producto para el supermercado 
 import { DataTypes, Model } from 'sequelize';
 import { sequelize } from '../config/database';
 
 export class Product extends Model {
-  public id!: number;
-  public name!: string;
-  public price!: number;
-  public stock!: number;
-  public category!: string;
+  // Usamos 'declare' para evitar que TS sobrescriba los valores de Sequelize
+  declare id: number;
+  declare name: string;
+  declare price: number;
+  declare stock: number;
+  declare category: string;
 }
 
 Product.init({
